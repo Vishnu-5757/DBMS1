@@ -1,0 +1,17 @@
+QUESTION 1 QUERY
+select B.Book_id,Title,Publisher_name,Author_name,Branch_id,No_of_copies from Book B,Book_authors BA,Book_copies BC where B.Book_id=BA.Book_id and BC.Book_id=B.Book_id
+
+OUTPUT
+Book_id	Title	Publisher_name	Author_name	Branch_id	No_of_copies
+10	DBMS	Mcgraw	Andrew	100	20
+10	DBMS	Mcgraw	Andrew	200	5
+20	SE	Person	Raj Kumar	300	15
+30	FLAT	SAM Pub	Samual	100	30
+40	BDA	IOP	Padma	500	7
+
+QUETSION 2 QUERY
+select Card_no from Book_lending where Date_out Between '2017-01-01' and '2017-06-01' group by Card_no having count(*)>3
+
+OUTPUT
+Card_no
+202
